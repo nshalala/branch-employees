@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>Code Academy</title>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1 id="companyName" class="text-center my-3 display-2 text-danger fw-bold"></h1>
+                <p id="companyBranch" class="text-center fw-bold fs-5"></p>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn btn-outline-dark my-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">New employee</button>
+                    <div>
+                        <select id="branchSelect" class="form-select border-black" aria-label="Default select example" onchange="showBranchData()"></select>
+                    </div>
+                </div>
+                <div
+                    class="modal fade"
+                    id="staticBackdrop"
+                    data-bs-backdrop="static"
+                    data-bs-keyboard="false"
+                    tabindex="-1"
+                    aria-labelledby="staticBackdropLabel"
+                    aria-hidden="true"
+                >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Add an employee</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="">
+                                    <input id="empName" type="text" placeholder="Name" class="form-control p-2 mt-2" />
+                                    <input id="empSurname" type="text" placeholder="Surname" class="form-control p-2 mt-2" />
+                                    <select id="empPosition" class="form-select p-2 mt-2" aria-label="Default select example">
+                                        <option value="position" selected disabled>Position</option>
+                                        <option value="CEO">CEO</option>
+                                        <option value="Project manager">Project manager</option>
+                                        <option value="Teacher">Teacher</option>
+                                        <option value="Student Coordinator">Student Coordinator</option>
+                                    </select>
+                                    <input id="empSalary" type="number" placeholder="Salary" class="form-control p-2 mt-2" />
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" onclick="resetInputs()">Close</button>
+                                <button type="button" class="btn btn-outline-success" onclick="addEmployee()">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Surname</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                    <tfoot id="tableFooter"></tfoot>
+                </table>
+            </div>
+        </main>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"
+        ></script>
+        <script src="script.js"></script>
+    </body>
+</html>
